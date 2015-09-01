@@ -68,7 +68,7 @@ public class App
         Elementi e2 = new Elementi();
         e2.setNumero(1);
         e2.setNomeInput("music CD at");
-        e1.setNomeOutput("music CD");
+        e2.setNomeOutput("music CD");
         e2.setPrezzoIniziale(14.99);
         e2.setIsBasicSalesTax(true);
         e2.setIsImportDuty(false);
@@ -78,7 +78,7 @@ public class App
         Elementi e3 = new Elementi();
         e3.setNumero(1);
         e3.setNomeInput("chocolate bar at");
-        e1.setNomeOutput("chocolate bar");
+        e3.setNomeOutput("chocolate bar");
         e3.setPrezzoIniziale(0.85);
         e3.setIsBasicSalesTax(false);
         e3.setIsImportDuty(false);
@@ -161,7 +161,7 @@ public class App
         e111.setNomeInput("imported bottle of perfume");
         e111.setNomeOutput("imported bottle of perfume");
         e111.setPrezzoIniziale(27.99);
-        e111.setIsBasicSalesTax(false);
+        e111.setIsBasicSalesTax(true);
         e111.setIsImportDuty(true);
         
         e111.populate();
@@ -193,7 +193,7 @@ public class App
         e444.setNomeInput("box of imported chocolates at");
         e444.setNomeOutput("imported box of chocolates"); //VERY DIFFERENT
         e444.setPrezzoIniziale(11.25);
-        e444.setIsBasicSalesTax(true);
+        e444.setIsBasicSalesTax(false);
         e444.setIsImportDuty(true);
         
         e444.populate(); 
@@ -220,7 +220,7 @@ public class App
         	
 			        for (int i = 0; i < gruppo.getElementi().size(); i++) {
 						
-			        	System.out.println( gruppo.getElementi().get(i).getNumero() + " "+ gruppo.getElementi().get(i).getNomeInput() + " " + gruppo.getElementi().get(i).getPrezzoFinale());
+			        	System.out.println( gruppo.getElementi().get(i).getNumero() + " "+ gruppo.getElementi().get(i).getNomeInput() + " " + gruppo.getElementi().get(i).getPrezzoIniziale());
 			        	
 					}
 		
@@ -245,8 +245,9 @@ public class App
 			        salesTaxes =gruppo.getSommaVal() - gruppo.getSommaValIniziale();
 			        salesTaxes = Math.rint(salesTaxes*Math.pow(10,2))/Math.pow(10,2);
 			        
+			        double dSommaVal= Math.rint(gruppo.getSommaVal()*Math.pow(10,2))/Math.pow(10,2);
 			        System.out.println( "Sales Taxes :" + salesTaxes  );
-			        System.out.println( "Total :" + gruppo.getSommaVal()  );
+			        System.out.println( "Total :" + dSommaVal  );
 		        	System.out.println(" ");
         	
 		}

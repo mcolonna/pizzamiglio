@@ -1,5 +1,7 @@
 package ch.web.pizzamiglio;
 
+import java.math.BigDecimal;
+
 
 
 public class Elementi {
@@ -12,6 +14,7 @@ public class Elementi {
 	private String nomeOutput;
 	private double prezzoIniziale;
 	private double prezzoFinale;
+	private double prezzoFinalePrima;
 	private double prezzoFinaleA =0;
 	private double prezzoFinaleB =0;
 	private Boolean isBasicSalesTax;
@@ -32,12 +35,50 @@ public class Elementi {
 		{
 			prezzoFinaleB =  ( (prezzoIniziale*IMPORT_DUSTY)/100);
 		}
-			
+
+
+		
+
+		
+		
+//		System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+//		System.out.println(prezzoFinaleA);
+//		System.out.println(prezzoFinaleB);
+//		System.out.println(prezzoIniziale);
+		
 		prezzoFinale = prezzoIniziale + prezzoFinaleA + prezzoFinaleB;
+//		System.out.println("####################");
+		prezzoFinalePrima=prezzoFinale;
+//		System.out.println(prezzoFinalePrima);
+//		double prezzoFinaleDD = Math.rint(prezzoFinalePrima*Math.pow(10,2))/Math.pow(10,2);
+//		System.out.println(prezzoFinaleDD);
 		
-		prezzoFinale = Math.rint(prezzoFinale*Math.pow(10,2))/Math.pow(10,2);
 		
+	     // prezzoFinale=  Math.ceil(prezzoFinale*Math.pow(10,2))/Math.pow(10,2);
+	      
+		if(isImportDuty && !isBasicSalesTax) //true
+		{
+			//System.out.println("005");
+			//arrotondo di 005
+			
+			prezzoFinale=prezzoFinale*100;
+			prezzoFinale=  Math.ceil(prezzoFinale/5)*5;
+			prezzoFinale=prezzoFinale/100;
+
+			
+			
+			
+//			System.out.println(prezzoFinale);
+		}
+		else{
+			
+//		System.out.println(prezzoFinale);
 		
+		BigDecimal bg = new BigDecimal(prezzoFinale);
+		bg = bg.setScale(2, BigDecimal.ROUND_HALF_DOWN);
+		prezzoFinale = bg.doubleValue();
+//		System.out.println(prezzoFinale);
+		}
 		
 	}
 	
