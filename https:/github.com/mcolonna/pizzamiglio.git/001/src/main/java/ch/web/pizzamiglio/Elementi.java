@@ -34,6 +34,17 @@ public class Elementi {
 		if(isImportDuty) //true
 		{
 			prezzoFinaleB =  ( (prezzoIniziale*IMPORT_DUSTY)/100);
+			
+			
+			//System.out.println("005");
+			//arrotondo di 005
+			
+			prezzoFinaleB=prezzoFinaleB*100;
+			prezzoFinaleB=  Math.ceil(prezzoFinaleB/5)*5;
+			prezzoFinaleB=prezzoFinaleB/100;
+			
+			
+			
 		}
 
 
@@ -56,21 +67,21 @@ public class Elementi {
 		
 	     // prezzoFinale=  Math.ceil(prezzoFinale*Math.pow(10,2))/Math.pow(10,2);
 	      
-		if(isImportDuty && !isBasicSalesTax) //true
-		{
-			//System.out.println("005");
-			//arrotondo di 005
-			
-			prezzoFinale=prezzoFinale*100;
-			prezzoFinale=  Math.ceil(prezzoFinale/5)*5;
-			prezzoFinale=prezzoFinale/100;
-
-			
-			
-			
-//			System.out.println(prezzoFinale);
-		}
-		else{
+//		if(isImportDuty && !isBasicSalesTax) //true
+//		{
+//			//System.out.println("005");
+//			//arrotondo di 005
+//			
+//			prezzoFinale=prezzoFinale*100;
+//			prezzoFinale=  Math.ceil(prezzoFinale/5)*5;
+//			prezzoFinale=prezzoFinale/100;
+//
+//			
+//			
+//			
+////			System.out.println(prezzoFinale);
+//		}
+//		else{
 			
 //		System.out.println(prezzoFinale);
 		
@@ -78,7 +89,7 @@ public class Elementi {
 		bg = bg.setScale(2, BigDecimal.ROUND_HALF_DOWN);
 		prezzoFinale = bg.doubleValue();
 //		System.out.println(prezzoFinale);
-		}
+//		}
 		
 	}
 	
