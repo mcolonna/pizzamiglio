@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Gruppo {
 
-	private List<Elementi> elementi;
+	private List<Elementi> elementi; 
 	private double sommaVal = 0.0;
 	private double sommaValIniziale = 0.0;
 	private String nome;

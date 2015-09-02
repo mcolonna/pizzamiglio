@@ -25,7 +25,7 @@ public class App
         
         List<Gruppo> gruppoALL = new ArrayList<Gruppo>();
         Gruppo g1= new Gruppo() ;
-        Gruppo g2= new Gruppo() ;
+        Gruppo g2= new Gruppo() ; 
         Gruppo g3= new Gruppo() ;
         
         gruppoALL.add(g1);

@@ -37,7 +37,7 @@ public class Elementi {
 			
 			
 			//System.out.println("005");
-			//arrotondo di 005
+			//arrotondo di 005 
 			
 			prezzoFinaleB=prezzoFinaleB*100;
 			prezzoFinaleB=  Math.ceil(prezzoFinaleB/5)*5;
